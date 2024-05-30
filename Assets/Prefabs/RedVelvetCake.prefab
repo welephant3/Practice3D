@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 627331038613452728}
   - component: {fileID: 9193171831000770715}
   - component: {fileID: 911530688882577934}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Capsule (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -119,7 +119,7 @@ GameObject:
   - component: {fileID: 4399355204115459222}
   - component: {fileID: 9043378816128821612}
   - component: {fileID: 4632753868594378842}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Capsule (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -226,7 +226,7 @@ GameObject:
   - component: {fileID: 5378005590327216290}
   - component: {fileID: 1338928341861035466}
   - component: {fileID: 8805941263971445456}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Capsule (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -333,7 +333,7 @@ GameObject:
   - component: {fileID: 2614422892204154255}
   - component: {fileID: 852993894556510582}
   - component: {fileID: 7380912475609037741}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Capsule (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -440,7 +440,7 @@ GameObject:
   - component: {fileID: 4456060107168359466}
   - component: {fileID: 5413347908456353032}
   - component: {fileID: 6678682433704010626}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Capsule (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -547,7 +547,7 @@ GameObject:
   - component: {fileID: 8196939097316150766}
   - component: {fileID: 1141228460498083882}
   - component: {fileID: 8769411060500361984}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Capsule (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -654,7 +654,7 @@ GameObject:
   - component: {fileID: 4876069636630515645}
   - component: {fileID: 2712441356316365308}
   - component: {fileID: 4961248898195982679}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Capsule (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -761,7 +761,9 @@ GameObject:
   - component: {fileID: 4198466971136541012}
   - component: {fileID: 4076971616277152581}
   - component: {fileID: 3959018151297409763}
-  m_Layer: 0
+  - component: {fileID: 9106532072439091705}
+  - component: {fileID: 2520452837891709794}
+  m_Layer: 7
   m_Name: RedVelvetCake
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -865,6 +867,46 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+--- !u!114 &9106532072439091705
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6747970454599304773}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 098023f0feee3ed4690620378fa6825e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  data: {fileID: 11400000, guid: b5887a740371c1d41a05ec3418a36da0, type: 2}
+--- !u!54 &2520452837891709794
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6747970454599304773}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &7265373351246029486
 GameObject:
   m_ObjectHideFlags: 0
@@ -877,7 +919,7 @@ GameObject:
   - component: {fileID: 2584122123262672166}
   - component: {fileID: 1270922034222472226}
   - component: {fileID: 377544323576657539}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -984,7 +1026,7 @@ GameObject:
   - component: {fileID: 6427884641912525241}
   - component: {fileID: 768448460263446567}
   - component: {fileID: 7243152389580874440}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Capsule
   m_TagString: Untagged
   m_Icon: {fileID: 0}

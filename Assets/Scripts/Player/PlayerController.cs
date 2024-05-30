@@ -6,7 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     [Header("Movement")]
     public float moveSpeed;
-    private Vector2 curMovementInput;    
+    private Vector2 curMovementInput;
     public LayerMask groundLayerMask;
 
     [Header("Look")]
@@ -34,8 +34,12 @@ public class PlayerController : MonoBehaviour
     }
 
     private void FixedUpdate()
-    {
-        Move();
+    {        
+        Move();        
+        if (Input.GetKey(KeyCode.LeftShift))
+        { 
+            Dash();
+        }        
     }
 
     private void LateUpdate()
@@ -63,10 +67,32 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public void OnDashInput(InputAction.CallbackContext context)
+    {
+        if (context.phase == InputActionPhase.Performed)
+        {
+            curMovementInput = context.ReadValue<Vector2>();
+        }
+        else if (context.phase == InputActionPhase.Canceled)
+        {
+            curMovementInput = Vector2.zero;
+        }
+    }
+
     private void Move()
     {
         Vector3 dir = transform.forward * curMovementInput.y + transform.right * curMovementInput.x;
         dir *= moveSpeed;
+        dir.y = rigidbody.velocity.y;
+
+        rigidbody.velocity = dir;
+    }
+
+    void Dash()
+    {
+        float moveSpeedDash = moveSpeed * 1.5f;
+        Vector3 dir = transform.forward * curMovementInput.y + transform.right * curMovementInput.x;
+        dir *= moveSpeedDash;
         dir.y = rigidbody.velocity.y;
 
         rigidbody.velocity = dir;

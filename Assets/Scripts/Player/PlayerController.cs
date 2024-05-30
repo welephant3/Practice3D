@@ -16,16 +16,21 @@ public class PlayerController : MonoBehaviour
     private float camCurXRot;
     public float lookSensitivity;
 
+    [Header("Run")]
+    public float dashPerRate;
+
     private Vector2 mouseDelta;
 
     [HideInInspector]
     public bool canLook = true;
 
     private Rigidbody rigidbody;
+    private Player player;
 
     private void Awake()
     {
         rigidbody = GetComponent<Rigidbody>();
+        player = GetComponent<Player>();
     }
 
     void Start()
@@ -35,11 +40,11 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {        
-        Move();        
+        Move();
         if (Input.GetKey(KeyCode.LeftShift))
-        { 
-            Dash();
-        }        
+        {
+            Run();
+        }
     }
 
     private void LateUpdate()
@@ -67,7 +72,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void OnDashInput(InputAction.CallbackContext context)
+    public void OnRunInput(InputAction.CallbackContext context)
     {
         if (context.phase == InputActionPhase.Performed)
         {
@@ -88,14 +93,15 @@ public class PlayerController : MonoBehaviour
         rigidbody.velocity = dir;
     }
 
-    void Dash()
+    void Run()
     {
-        float moveSpeedDash = moveSpeed * 1.5f;
+        float moveSpeedDash = moveSpeed * 2f;
         Vector3 dir = transform.forward * curMovementInput.y + transform.right * curMovementInput.x;
         dir *= moveSpeedDash;
         dir.y = rigidbody.velocity.y;
 
         rigidbody.velocity = dir;
+        player.condition.UseStamina(dashPerRate);
     }
 
     void CameraLook()

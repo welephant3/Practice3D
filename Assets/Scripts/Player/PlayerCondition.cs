@@ -7,26 +7,18 @@ public interface IDamagable
 }
 
 
-public class PlayerConditions : MonoBehaviour, IDamagable
+public class PlayerCondition : MonoBehaviour, IDamagable
 {
     public UICondition uiCondition;
 
-    Condition health { get { return uiCondition.health; } }
-    Condition hunger { get { return uiCondition.hunger; } }
+    Condition health { get { return uiCondition.health; } }   
     Condition stamina { get { return uiCondition.stamina; } }
-
-    public float noHungerHealthDecay;
+        
     public event Action onTakeDamage;
 
     void Update()
     {
-        hunger.Subtract(hunger.decayRate * Time.deltaTime);
         stamina.Add(stamina.regenRate * Time.deltaTime);
-
-        if (hunger.curValue == 0.0f)
-        {
-            health.Subtract(noHungerHealthDecay * Time.deltaTime);
-        }
 
         if (health.curValue == 0.0f)
         {

@@ -15,7 +15,9 @@ MonoBehaviour:
   displayName: ChocoCAKE
   description: Delicious!
   type: 0
-  icon: {fileID: 0}
+  icon: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
   canStack: 1
   maxStackAmount: 2
-  consumables: []
+  consumables:
+  - type: 0
+    value: 15

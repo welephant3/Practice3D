@@ -26,6 +26,11 @@ public class PlayerCondition : MonoBehaviour, IDamagable
         }
     }
 
+    public void Heal(float amount)
+    {
+        health.Add(amount);
+    }
+
     public void Die()
     {
         Debug.Log("²ô¾Ó Áê±Ý!");
